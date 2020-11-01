@@ -37,7 +37,3 @@ let addActive = (index) => {
   indicators[index].classList.add("slider_indicator-active");
   slides[index].classList.add("slider_slide-active");
 };
-
-sidebarIcon.addEventListener("click", () => {
-  sidebar.style.display = sidebar.style.display === "none" ? "block" : "none";
-});

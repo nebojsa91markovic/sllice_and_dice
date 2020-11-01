@@ -17,7 +17,7 @@ button {
   cursor: pointer;
 }
 
-#learnMoreBtn:hover {
+.learnMoreBtn:hover {
   transform: scale(1.1);
 }
 
