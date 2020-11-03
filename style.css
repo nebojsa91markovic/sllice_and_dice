@@ -4,6 +4,10 @@
   font-family: "Raleway";
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* font-family: 'Raleway', sans-serif; */
 
 button {
@@ -17,8 +21,24 @@ button {
   cursor: pointer;
 }
 
+.learnMoreBtn {
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
 .learnMoreBtn:hover {
   transform: scale(1.1);
+}
+
+a {
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 a,
@@ -27,15 +47,23 @@ a:focus,
 a:active {
   text-decoration: none;
   color: inherit;
+  display: block;
 }
 
 nav {
   color: white;
   display: inline-block;
+  position: relative;
 }
 
 nav ul li {
   display: none;
+  border: 1px solid transparent;
+}
+
+nav ul li:hover {
+  color: orange;
+  border-color: white;
 }
 
 .logo {
@@ -60,17 +88,21 @@ nav ul li {
 }
 
 .sidebar {
-  display: none;
+  position: absolute;
+  transform: translateX(-100%);
   list-style: none;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding: 50px;
+  padding-top: 70px;
   align-items: center;
   flex-direction: column;
-  margin-top: 18px;
-  transition: 0.3s;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  transition: 0.5s ease;
   background-color: rgba(127, 140, 141, 0.5);
-  width: 250px;
-  height: 50%;
+  width: 100%;
+  height: 90%;
   z-index: 1;
 }
 
@@ -82,7 +114,7 @@ nav ul li {
   cursor: pointer;
   margin-top: 10px;
   margin-bottom: 10px;
-  padding: 5px;
+  padding: 15px;
 }
 .sidebar li:hover {
   background-color: orange;
@@ -114,9 +146,10 @@ nav ul li {
 
 .slider_slide {
   display: none;
-  width: 100%;
+  /* width: 100%; */
   text-align: center;
   padding: 50px;
+  width: 0;
 }
 
 .slider_slide button {
@@ -124,6 +157,7 @@ nav ul li {
 }
 
 .slider_slide-active {
+  width: 100%;
   display: block;
   animation-name: slider;
   animation-duration: 1.2s;
@@ -160,6 +194,11 @@ nav ul li {
   background: none;
   border: none;
   transform: translateY(-50%);
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 .slider_btn-next:hover,
@@ -193,7 +232,11 @@ nav ul li {
   border-radius: 50%;
   background: none;
   background-color: white;
-  transition: background-color 0.4s;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 .slider_indicator:last-child {
@@ -268,22 +311,19 @@ nav ul li {
   border-radius: 50%;
   display: inline-block;
   text-align: center;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
   align-items: center;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 .aboutUs-item:hover span {
-  height: 120px;
-  width: 120px;
   background-color: rgb(50, 211, 170);
   border-radius: 50%;
   display: inline-block;
   text-align: center;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
   cursor: pointer;
 }
 
@@ -318,7 +358,7 @@ nav ul li {
 }
 
 .services:nth-child(even) .services-pic {
-  float: right !important;
+  float: right;
 }
 
 .services-pic {
@@ -369,25 +409,21 @@ nav ul li {
 }
 
 #sidebar-icon {
-  position: absolute !important;
-  right: 30px !important;
-  top: 18px !important;
+  position: absolute;
+  right: 30px;
+  top: 18px;
   font-size: 24px;
   cursor: pointer;
   z-index: 1;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 #sidebar-icon:hover {
   color: orange;
-}
-
-#sidebar {
-  display: none;
-  position: absolute;
-  right: 0 !important;
-  top: 0 !important;
-  background-color: grey;
-  width: 50%;
 }
 
 /*Tablet*/
@@ -397,10 +433,14 @@ nav ul li {
     float: left;
   }
 
+  .sidebar {
+    width: 50%;
+  }
+
   #sidebar-icon {
-    position: absolute !important;
-    right: 30px !important;
-    top: 30px !important;
+    position: absolute;
+    right: 30px;
+    top: 30px;
     font-size: 24px;
     cursor: pointer;
   }
@@ -467,10 +507,11 @@ nav ul li {
     padding: 10px 5px;
     display: inline-block;
     cursor: pointer;
-  }
-
-  nav ul li:hover {
-    color: orange;
+    -webkit-transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
+    -ms-transition: 0.5s ease;
+    transition: 0.5s ease;
   }
 
   #sidebar-icon {

@@ -3,7 +3,7 @@ let prevBtn = document.querySelector(".slider_btn-prev");
 let nextBtn = document.querySelector(".slider_btn-next");
 let indicators = document.querySelectorAll(".slider_indicator");
 
-let sidebarIcon = document.querySelector("#sidebar-icon");
+let navToggler = document.querySelector("#sidebar-icon");
 let sidebar = document.querySelector(".sidebar");
 
 let sliderIndex = 0;
@@ -37,3 +37,9 @@ let addActive = (index) => {
   indicators[index].classList.add("slider_indicator-active");
   slides[index].classList.add("slider_slide-active");
 };
+
+navToggler.addEventListener("click", () => {
+  sidebar.style.transform == "translateX(-100%)"
+    ? (sidebar.style.transform = "translateX(0%)")
+    : (sidebar.style.transform = "translateX(-100%)");
+});
